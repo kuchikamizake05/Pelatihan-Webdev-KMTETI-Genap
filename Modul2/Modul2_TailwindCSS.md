@@ -297,6 +297,11 @@ body {
 
 ---
 
+## 📚 **Referensi Tambahan**
+
+1. **Tailwind CSS Docs**  
+   🔗 [Docs](https://tailwindcss.com/docs/styling-with-utility-classes)
+
 ## 🚀 Pertemuan Berikutnya
 
 Pada pertemuan berikutnya, kita akan membahas **JavaScript & API Fetching** untuk mengintegrasikan fungsionalitas dinamis ke dalam aplikasi AI Summarizer.

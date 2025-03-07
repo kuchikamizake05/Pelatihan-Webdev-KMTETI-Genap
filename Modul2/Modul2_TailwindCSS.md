@@ -13,15 +13,60 @@ Pada pertemuan kedua ini, kita akan:
 
 ## Mengenal Tailwind CSS, CDN, dan Keunggulan Tailwind
 
-### Utility-First CSS
+### Utility-First CSS 
 
-Tailwind CSS adalah framework yang mengutamakan penggunaan kelas-kelas utilitas langsung di HTML.  
-Setiap kelas mewakili satu fungsi styling (misalnya: padding, margin, warna), yang memungkinkan pengembangan yang cepat dan konsisten tanpa perlu menulis banyak CSS custom.
+**Tailwind CSS** memungkinkan penulisan styling langsung di HTML melalui kelas-kelas utilitas—mirip dengan inline CSS, tetapi dengan konsistensi dan struktur yang lebih baik. Contoh:
+
+```html
+<button
+  class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+>
+  Klik Saya
+</button>
+```
+
+Setiap kelas seperti `px-6` atau `bg-blue-600` berfungsi seperti properti CSS yang ditulis langsung di atribut `style`, namun dengan standar yang konsisten.
+
+#### Cara Pemanggilan CSS
+
+1. **Inline CSS:**  
+   Ditulis langsung di elemen.
+   ```html
+   <button
+     style="padding: 1.5rem 0.5rem; background-color: #007bff; color: white; border-radius: 5px;"
+   >
+     Klik Saya
+   </button>
+   ```
+2. **Internal CSS:**  
+   Ditulis di dalam tag `<style>` di `<head>`.
+   ```html
+   <head>
+     <style>
+       .custom-btn {
+         padding: 10px 20px;
+         background: #007bff;
+         color: white;
+         border-radius: 5px;
+       }
+     </style>
+   </head>
+   ```
+3. **Eksternal CSS:**  
+   Ditulis di file `.css` terpisah yang di-link-kan ke HTML.
+   ```html
+   <head>
+     <link rel="stylesheet" href="style.css" />
+   </head>
+   ```
 
 ### Cara Kerja CDN Tailwind CSS
 
 Dengan menambahkan skrip CDN Tailwind pada tag `<head>`, browser akan mengunduh file CSS Tailwind dari server CDN.  
-CDN (Content Delivery Network) merupakan jaringan server global yang menyimpan file statis, sehingga file Tailwind dapat diakses dengan cepat dari lokasi terdekat.  
+CDN (Content Delivery Network) merupakan jaringan server global yang menyimpan file statis, sehingga file Tailwind dapat diakses dengan cepat dari lokasi terdekat.
+
+![CDN](./public/CDN.png)
+
 Ini mengurangi beban server Anda dan mempercepat waktu load halaman.
 
 #### Ilustrasi Cara Kerja CDN dengan Mermaid

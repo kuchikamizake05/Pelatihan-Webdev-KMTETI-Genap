@@ -13,7 +13,7 @@ Pada pertemuan kedua ini, kita akan:
 
 ## Mengenal Tailwind CSS, CDN, dan Keunggulan Tailwind
 
-### Utility-First CSS 
+### Utility-First CSS
 
 **Tailwind CSS** memungkinkan penulisan styling langsung di HTML melalui kelas-kelas utilitas—mirip dengan inline CSS, tetapi dengan konsistensi dan struktur yang lebih baik. Contoh:
 
@@ -119,6 +119,10 @@ Ini mengurangi beban server Anda dan mempercepat waktu load halaman.
    Banyak utilitas yang sudah tersedia sehingga mengurangi kebutuhan menulis kode CSS khusus. Hal ini meningkatkan maintainability dan menghindari konflik styling.
 
 ---
+
+## 0️⃣ Review Basic HTML & CSS 😅
+
+- 🔗 [PPT](https://www.canva.com/design/DAGhD690Vm4/qQoe9HD94nnDsr_ATcmKSQ/edit?utm_content=DAGhD690Vm4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## 1️⃣ Kode HTML dengan Tailwind CSS & Fitur Tambahan
 

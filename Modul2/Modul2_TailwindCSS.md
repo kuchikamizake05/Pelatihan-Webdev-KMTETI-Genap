@@ -301,6 +301,12 @@ body {
 
 1. **Tailwind CSS Docs**  
    🔗 [Docs](https://tailwindcss.com/docs/styling-with-utility-classes)
+2. **Tailwind in 23 Minutes (Skip to 5.18)**  
+   🔗 [FastTrack](https://youtu.be/W-LDhPyv478?si=b3H8SItB0J1zK2Jv)
+3. **Tailwind Layouting**  
+   🔗 [Layouting](https://youtu.be/Hq0M3zUlegE?si=ngOxx-4eQyaOtovk)
+4. **Tailwind FlexBox**  
+   🔗 [FlexBox](https://youtu.be/tZV_Ax9TyUY?si=djL1YwqpYpiEaov0)
 
 ## 🚀 Pertemuan Berikutnya
 

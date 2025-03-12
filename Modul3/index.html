@@ -9,7 +9,7 @@
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Connect js file -->
-    <!-- <script src="/Modul3/main.js"></script> -->
+    <script src="/Modul3/main.js"></script>
   </head>
   <body class="bg-gray-100 font-sans">
     <header class="bg-blue-500 text-white py-4">
@@ -59,14 +59,14 @@
         </ul>
       </section>
     </main>
-    <script>
+    <!-- <script>
       // Fungsi untuk menampilkan ringkasan dan menambahkan ke riwayat
       function ringkas() {
-        var input = document.getElementById("inputText").value.trim();
+        const input = document.getElementById("inputText").value.trim();
         if (input === "") return;
 
         // Simulasi ringkasan: output sama dengan input (karena belum terhubung ke model AI)
-        var summary = input;
+        const summary = input;
         document.getElementById("hasilRingkasan").innerText = summary;
 
         // Simpan ringkasan ke localStorage dan render riwayat
@@ -123,6 +123,6 @@
 
       // Render riwayat saat halaman dimuat
       window.onload = renderHistory;
-    </script>
+    </script> -->
   </body>
 </html>

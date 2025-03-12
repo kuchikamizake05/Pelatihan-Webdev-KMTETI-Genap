@@ -1,48 +1,63 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Seleksi elemen
-  const textarea = document.querySelector("textarea");
-  const btnRingkas = document.querySelectorAll("button")[0];
-  const btnReset = document.querySelectorAll("button")[1];
-  const hasilSection = document.querySelector("section:nth-of-type(1) p");
-  const riwayatList = document.querySelector("section:nth-of-type(2) ul");
+// Fungsi untuk menampilkan ringkasan dan menambahkan ke riwayat
+function ringkas() {
+  const input = document.getElementById("inputText").value.trim();
+  if (input === "") return;
 
-  const historyKey = "summaryHistory";
-  let history = JSON.parse(localStorage.getItem(historyKey)) || [];
+  // Simulasi ringkasan: output sama dengan input (karena belum terhubung ke model AI)
+  const summary = input;
+  document.getElementById("hasilRingkasan").innerText = summary;
 
-  // Fungsi untuk merender riwayat ringkasan
-  function renderHistory() {
-    riwayatList.innerHTML = "";
-    history.forEach((item) => {
-      let li = document.createElement("li");
-      li.textContent = item;
-      riwayatList.appendChild(li);
-    });
-  }
+  // Simpan ringkasan ke localStorage dan render riwayat
+  let history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
+  history.push(summary);
+  localStorage.setItem("summaryHistory", JSON.stringify(history));
   renderHistory();
+}
 
-  // Event handler untuk tombol "Ringkas"
-  btnRingkas.addEventListener("click", function () {
-    const inputText = textarea.value.trim();
-    if (inputText === "") return;
+// Fungsi untuk mereset input dan hasil ringkasan
+function reset() {
+  document.getElementById("inputText").value = "";
+  document.getElementById("hasilRingkasan").innerText =
+    "Hasil ringkasan teks akan muncul di sini setelah proses ringkasan selesai.";
+}
 
-    // Simulasi proses ringkasan (output hanya menampilkan teks asli)
-    const summary = inputText;
+// Fungsi untuk menghapus item riwayat berdasarkan index
+function deleteHistory(index) {
+  let history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
+  history.splice(index, 1);
+  localStorage.setItem("summaryHistory", JSON.stringify(history));
+  renderHistory();
+}
 
-    // Tampilkan hasil ringkasan
-    hasilSection.textContent = summary;
+// Fungsi untuk menampilkan riwayat ringkasan dan menambahkan delete button
+function renderHistory() {
+  const riwayatList = document.getElementById("riwayatRingkasan");
+  riwayatList.innerHTML = "";
+  let history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
 
-    // Tambahkan ringkasan ke riwayat dan simpan ke local storage
-    history.push(summary);
-    localStorage.setItem(historyKey, JSON.stringify(history));
-    renderHistory();
+  // Jika tidak ada riwayat, tampilkan pesan
+  if (history.length === 0)
+    return (riwayatList.innerHTML =
+      "<p class='text-gray-700'>Tidak ada riwayat ringkasan.</p>");
+
+  history.forEach((item, index) => {
+    let li = document.createElement("li");
+    li.className = "flex justify-between items-center";
+    li.innerText = item;
+
+    // Tombol delete untuk tiap riwayat
+    let delBtn = document.createElement("button");
+    delBtn.innerText = "Delete";
+    delBtn.className =
+      "ml-4 px-2 py-1 bg-red-400 text-white rounded hover:bg-red-500 transition";
+    delBtn.onclick = function () {
+      deleteHistory(index);
+    };
+
+    li.appendChild(delBtn);
+    riwayatList.appendChild(li);
   });
+}
 
-  // Event handler untuk tombol "Reset"
-  btnReset.addEventListener("click", function () {
-    // Hapus tampilan hasil ringkasan dan kosongkan textarea
-    hasilSection.textContent =
-      "Hasil ringkasan teks akan muncul di sini setelah proses ringkasan selesai.";
-    textarea.value = "";
-    // Riwayat tetap tersimpan di local storage
-  });
-});
+// Render riwayat saat halaman dimuat
+window.onload = renderHistory;

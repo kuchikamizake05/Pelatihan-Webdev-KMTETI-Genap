@@ -96,6 +96,12 @@
         const riwayatList = document.getElementById("riwayatRingkasan");
         riwayatList.innerHTML = "";
         let history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
+
+        // Jika tidak ada riwayat, tampilkan pesan
+        if (history.length === 0)
+          return (riwayatList.innerHTML =
+            "<p class='text-gray-700'>Tidak ada riwayat ringkasan.</p>");
+
         history.forEach((item, index) => {
           let li = document.createElement("li");
           li.className = "flex justify-between items-center";

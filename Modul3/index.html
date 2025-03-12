@@ -85,6 +85,14 @@
           "Hasil ringkasan teks akan muncul di sini setelah proses ringkasan selesai.";
       }
 
+      // Fungsi untuk menghapus item riwayat berdasarkan index
+      function deleteHistory(index) {
+        let history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
+        history.splice(index, 1);
+        localStorage.setItem("summaryHistory", JSON.stringify(history));
+        renderHistory();
+      }
+
       // Fungsi untuk menampilkan riwayat ringkasan dan menambahkan delete button
       function renderHistory() {
         const riwayatList = document.getElementById("riwayatRingkasan");

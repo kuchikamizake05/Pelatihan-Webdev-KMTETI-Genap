@@ -120,6 +120,11 @@ Ini mengurangi beban server Anda dan mempercepat waktu load halaman.
 
 ---
 
+### 🛠 **Install Extension Pendukung**
+
+1. **Tailwind CSS IntelliSense** - Menyediakan autocompletion, linting, dan tooltips untuk kelas-kelas Tailwind CSS, sehingga memudahkan penulisan dan menjaga konsistensi kode.  
+   🔗 [Unduh Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+
 ## 0️⃣ Review Basic HTML & CSS 😅
 
 - 🔗 [PPT](https://www.canva.com/design/DAGhD690Vm4/qQoe9HD94nnDsr_ATcmKSQ/edit?utm_content=DAGhD690Vm4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)

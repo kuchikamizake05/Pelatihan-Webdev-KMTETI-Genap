@@ -52,8 +52,7 @@
       <section class="mt-8 bg-white p-4 rounded shadow">
         <h2 class="text-xl font-semibold mb-2">Riwayat Ringkasan</h2>
         <ul id="riwayatRingkasan" class="list-disc list-inside text-gray-700">
-          <li>Ringkasan 1: Contoh ringkasan teks.</li>
-          <li>Ringkasan 2: Contoh ringkasan teks lainnya.</li>
+          <!-- Riwayat akan dirender secara dinamis -->
         </ul>
       </section>
     </main>
@@ -86,16 +85,32 @@
           "Hasil ringkasan teks akan muncul di sini setelah proses ringkasan selesai.";
       }
 
-      // Saat halaman dimuat, render riwayat ringkasan dari localStorage
-      window.onload = function () {
-        var history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
-        var riwayatList = document.getElementById("riwayatRingkasan");
-        history.forEach(function (item) {
-          var li = document.createElement("li");
+      // Fungsi untuk menampilkan riwayat ringkasan dan menambahkan delete button
+      function renderHistory() {
+        const riwayatList = document.getElementById("riwayatRingkasan");
+        riwayatList.innerHTML = "";
+        let history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
+        history.forEach((item, index) => {
+          let li = document.createElement("li");
+          li.className = "flex justify-between items-center";
           li.innerText = item;
+
+          // Tombol delete untuk tiap riwayat
+          let delBtn = document.createElement("button");
+          delBtn.innerText = "Delete";
+          delBtn.className =
+            "ml-4 px-2 py-1 bg-red-400 text-white rounded hover:bg-red-500 transition";
+          delBtn.onclick = function () {
+            deleteHistory(index);
+          };
+
+          li.appendChild(delBtn);
           riwayatList.appendChild(li);
         });
-      };
+      }
+
+      // Render riwayat saat halaman dimuat
+      window.onload = renderHistory;
     </script>
   </body>
 </html>

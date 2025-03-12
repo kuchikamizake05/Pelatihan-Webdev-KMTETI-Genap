@@ -66,16 +66,11 @@
         var summary = input;
         document.getElementById("hasilRingkasan").innerText = summary;
 
-        // Tambahkan ringkasan ke daftar riwayat
-        var riwayatList = document.getElementById("riwayatRingkasan");
-        var li = document.createElement("li");
-        li.innerText = summary;
-        riwayatList.appendChild(li);
-
-        // Simpan riwayat ke localStorage
-        var history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
+        // Simpan ringkasan ke localStorage dan render riwayat
+        let history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
         history.push(summary);
         localStorage.setItem("summaryHistory", JSON.stringify(history));
+        renderHistory();
       }
 
       // Fungsi untuk mereset input dan hasil ringkasan

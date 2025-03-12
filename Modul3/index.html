@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="style.css" />
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Connect Js file -->
-    <script src="main.js"></script>
+    <!-- Connect js file -->
+    <!-- <script src="/Modul3/main.js"></script> -->
   </head>
   <body class="bg-gray-100 font-sans">
     <header class="bg-blue-500 text-white py-4">
@@ -20,6 +20,7 @@
       <!-- Container input dan tombol -->
       <div class="flex flex-col sm:flex-row gap-4">
         <textarea
+          id="inputText"
           class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           rows="5"
           placeholder="Masukkan teks di sini"
@@ -27,11 +28,13 @@
         <div class="flex flex-col gap-2">
           <button
             class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+            onclick="ringkas()"
           >
             Ringkas
           </button>
           <button
             class="px-6 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition"
+            onclick="reset()"
           >
             Reset
           </button>
@@ -40,7 +43,7 @@
       <!-- Fitur Tambahan: Hasil Ringkasan -->
       <section class="mt-8 bg-white p-4 rounded shadow">
         <h2 class="text-xl font-semibold mb-2">Hasil Ringkasan</h2>
-        <p class="text-gray-700">
+        <p id="hasilRingkasan" class="text-gray-700">
           Hasil ringkasan teks akan muncul di sini setelah proses ringkasan
           selesai.
         </p>
@@ -48,11 +51,51 @@
       <!-- Fitur Tambahan: Riwayat Ringkasan -->
       <section class="mt-8 bg-white p-4 rounded shadow">
         <h2 class="text-xl font-semibold mb-2">Riwayat Ringkasan</h2>
-        <ul class="list-disc list-inside text-gray-700">
+        <ul id="riwayatRingkasan" class="list-disc list-inside text-gray-700">
           <li>Ringkasan 1: Contoh ringkasan teks.</li>
           <li>Ringkasan 2: Contoh ringkasan teks lainnya.</li>
         </ul>
       </section>
     </main>
+    <script>
+      // Fungsi untuk menampilkan ringkasan dan menambahkan ke riwayat
+      function ringkas() {
+        var input = document.getElementById("inputText").value.trim();
+        if (input === "") return;
+
+        // Simulasi ringkasan: output sama dengan input (karena belum terhubung ke model AI)
+        var summary = input;
+        document.getElementById("hasilRingkasan").innerText = summary;
+
+        // Tambahkan ringkasan ke daftar riwayat
+        var riwayatList = document.getElementById("riwayatRingkasan");
+        var li = document.createElement("li");
+        li.innerText = summary;
+        riwayatList.appendChild(li);
+
+        // Simpan riwayat ke localStorage
+        var history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
+        history.push(summary);
+        localStorage.setItem("summaryHistory", JSON.stringify(history));
+      }
+
+      // Fungsi untuk mereset input dan hasil ringkasan
+      function reset() {
+        document.getElementById("inputText").value = "";
+        document.getElementById("hasilRingkasan").innerText =
+          "Hasil ringkasan teks akan muncul di sini setelah proses ringkasan selesai.";
+      }
+
+      // Saat halaman dimuat, render riwayat ringkasan dari localStorage
+      window.onload = function () {
+        var history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
+        var riwayatList = document.getElementById("riwayatRingkasan");
+        history.forEach(function (item) {
+          var li = document.createElement("li");
+          li.innerText = item;
+          riwayatList.appendChild(li);
+        });
+      };
+    </script>
   </body>
 </html>

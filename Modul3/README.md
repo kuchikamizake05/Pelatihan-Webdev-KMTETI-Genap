@@ -21,23 +21,74 @@ Node.js adalah runtime environment yang memungkinkan JavaScript dijalankan di lu
 
 ### Cara Instalasi Node.js
 
+#### Di Windows
+
 1. **Unduh Installer:**
+
    - Kunjungi [situs resmi Node.js](https://nodejs.org) dan unduh versi LTS (Long Term Support).
+
 2. **Instalasi:**
-   - Jalankan installer yang sudah diunduh dan ikuti petunjuk instalasi.
+
+   - Jalankan installer dan ikuti petunjuknya. Pastikan opsi untuk menambahkan Node.js ke PATH dicentang agar Anda dapat menjalankan perintah `node` dan `npm` dari command prompt.
+
 3. **Verifikasi:**
-   - Buka terminal/command prompt dan ketik:
+
+   - Buka Command Prompt dan ketik:
      ```bash
      node -v
      npm -v
      ```
    - Pastikan kedua perintah mengembalikan versi Node.js dan npm yang terpasang.
 
+4. **Penambahan PATH (Jika belum otomatis agar node dapat dipakai secara global):**
+   - Klik kanan pada **This PC** atau **Computer**, pilih **Properties**, lalu **Advanced system settings**.
+   - Klik **Environment Variables** dan di bagian **System variables**, cari variable **Path**.
+   - Klik **Edit** dan tambahkan direktori instalasi Node.js (misalnya: `C:\Program Files\nodejs\`).
+   - Simpan dan restart Command Prompt.
+
+#### Di Linux
+
+1. **Menggunakan Package Manager (Debian/Ubuntu):**
+   ```bash
+   sudo apt update
+   sudo apt install nodejs npm
+   ```
+2. **Atau Menggunakan Node Version Manager (nvm):**
+   - Install nvm dengan perintah:
+     ```bash
+     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
+     ```
+   - Tutup dan buka kembali terminal, lalu install Node.js:
+     ```bash
+     nvm install --lts
+     ```
+3. **Verifikasi:**
+   - Ketik di terminal:
+     ```bash
+     node -v
+     npm -v
+     ```
+
+#### Di macOS
+
+- **Menggunakan Homebrew:**
+  - Pastikan Homebrew sudah terinstal. Jika belum, instal dari [brew.sh](https://brew.sh).
+  - Jalankan perintah:
+    ```bash
+    brew install node
+    ```
+- **Verifikasi:**
+  - Buka Terminal dan ketik:
+    ```bash
+    node -v
+    npm -v
+    ```
+
 ---
 
 ## Basic Javascript
 
-- 🔗 [PPT](https://docs.google.com/presentation/d/1WpakPiQUarnP7htMg2jHTPQm8Wo4mrsWF4iQPaj53nw/edit?usp=sharing)
+- 🔗 [PPT](https://docs.google.com/presentation/d/1WpakPiQUarnP7htMg2jHTPQm8Wo4mrsWF4iQPaj53nw/edit?usp=sharing) (buka dengan email ugm)
 
 ## Dasar JavaScript yang Terpakai di React
 

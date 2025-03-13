@@ -127,6 +127,11 @@ Node.js adalah runtime environment yang memungkinkan JavaScript dijalankan di lu
 
 ---
 
+## 🛠 **Install Extension Pendukung**
+
+1. **JavaScript (ES6) code snippets** - Menyediakan autocompletion, linting, dan tooltips untuk sintaks JavaScript ES6, sehingga memudahkan penulisan dan menjaga konsistensi kode.  
+   🔗 [Unduh JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
+
 ## Kode Aplikasi AI Summarizer (Versi Interaktif)
 
 Aplikasi ini menggunakan JavaScript untuk mengambil input, menampilkan hasil, menyimpan riwayat di local storage, dan menyediakan tombol delete untuk menghapus item riwayat.

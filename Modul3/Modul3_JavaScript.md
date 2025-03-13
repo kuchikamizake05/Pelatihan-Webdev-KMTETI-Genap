@@ -303,4 +303,11 @@ window.onload = renderHistory;
 - **Implementasi Interaktivitas:**  
   Dengan memisahkan file JavaScript dari HTML, aplikasi menjadi lebih modular dan mudah dipelihara.
 
+## 📚 **Referensi Tambahan**
+
+1. **Instalasi Node Js di Windows**  
+   🔗 [Node js Windows](https://youtu.be/GIlLR5PQr-0?si=OR8_Ufu5mJhgYyCV)
+
+## 🚀 Pertemuan Berikutnya
+
 🚀 **Selanjutnya**, kita akan mendalami konsep React, migrasi proyek ke React dalam bentuk kumpulan komponen!

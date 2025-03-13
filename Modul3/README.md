@@ -4,54 +4,12 @@
 
 Pada pertemuan ketiga ini, peserta akan:
 
+- Menjelaskan Node.js dan cara instalasinya, sehingga JavaScript bisa berjalan di luar browser.
 - Memahami dasar-dasar JavaScript (tipe data, pengkondisian, perulangan, dan array function) yang dipakai di React.
 - Mengenal konsep DOM dan bagaimana JavaScript memanipulasi elemen HTML.
-- Menjelaskan Node.js dan cara instalasinya, sehingga JavaScript bisa berjalan di luar browser.
 - Membuat event handler untuk tombol **Ringkas**, **Reset**, dan **Delete Riwayat**.
 - Menggunakan local storage untuk menyimpan riwayat ringkasan sementara.
 - Mengintegrasikan kode JavaScript terpisah dengan HTML agar aplikasi interaktif.
-
----
-
-## Dasar JavaScript yang Terpakai di React
-
-### Tipe Data dan Struktur Dasar
-
-- **Tipe Data:** JavaScript memiliki tipe data seperti string, number, boolean, null, dan undefined.
-  ```javascript
-  let message = "Hello React"; // String
-  let count = 10; // Number
-  let isVisible = true; // Boolean
-  ```
-- **Pengkondisian:** Digunakan untuk mengambil keputusan dengan `if`, `else if`, dan `else`.
-  ```javascript
-  if (count > 0) {
-    console.log("Positive");
-  } else {
-    console.log("Not positive");
-  }
-  ```
-- **Perulangan:** Loop seperti `for` dan metode array seperti `forEach` digunakan untuk iterasi.
-  ```javascript
-  [1, 2, 3].forEach((item) => console.log(item));
-  ```
-
-### Dasar JavaScript dalam React
-
-React menggunakan JavaScript modern (ES6+). Di dalam React, Anda akan sering menggunakan:
-
-- **Arrow Functions:** Untuk menulis fungsi dengan sintaks ringkas.
-  ```javascript
-  const greet = (name) => `Hello, ${name}!`;
-  ```
-- **Destructuring:** Untuk mengambil nilai dari objek atau array.
-  ```javascript
-  const { title, content } = props;
-  ```
-- **State Management:** Menggunakan hook seperti `useState` untuk mengelola state komponen.
-  ```javascript
-  const [text, setText] = useState("");
-  ```
 
 ---
 
@@ -59,7 +17,7 @@ React menggunakan JavaScript modern (ES6+). Di dalam React, Anda akan sering men
 
 ### Penjelasan Singkat
 
-Node.js adalah runtime environment yang memungkinkan JavaScript dijalankan di luar browser, seperti di laptop atau server. Node.js menggunakan mesin V8 dari Google Chrome dan menyediakan API asinkron (non-blocking) yang sangat efisien untuk aplikasi berskala besar. Dengan npm (Node Package Manager), Anda dapat mengelola paket-paket yang membantu pengembangan fullstack.
+Node.js adalah runtime environment yang memungkinkan JavaScript dijalankan di luar browser, seperti di laptop atau server. Node.js menggunakan mesin V8 dari Google Chrome dan menyediakan API asinkron (non-blocking) yang sangat efisien untuk aplikasi berskala besar. Dengan npm (Node Package Manager), kita dapat mengelola paket-paket yang membantu pengembangan fullstack.
 
 ### Cara Instalasi Node.js
 
@@ -74,6 +32,47 @@ Node.js adalah runtime environment yang memungkinkan JavaScript dijalankan di lu
      npm -v
      ```
    - Pastikan kedua perintah mengembalikan versi Node.js dan npm yang terpasang.
+
+---
+
+## Basic Javascript
+
+- 🔗 [PPT](https://docs.google.com/presentation/d/1WpakPiQUarnP7htMg2jHTPQm8Wo4mrsWF4iQPaj53nw/edit?usp=sharing)
+
+## Dasar JavaScript yang Terpakai di React
+
+- **Tipe Data:** JavaScript memiliki tipe data seperti string, number, boolean, null, dan undefined.
+  ```javascript
+  let message = "Hello React"; // String
+  const count = 10; // Number
+  let isVisible = true; // Boolean
+  ```
+- **Pengkondisian:** Digunakan untuk mengambil keputusan dengan `if`, `else if`, dan `else`.
+  ```javascript
+  if (count > 0) {
+    console.log("Positive");
+  } else {
+    console.log("Not positive");
+  }
+  ```
+- **Perulangan:** Loop seperti `for` dan metode array seperti `forEach` digunakan untuk iterasi.
+
+  ```javascript
+  [1, 2, 3].forEach((item) => console.log(item));
+  ```
+
+- **Arrow Functions:** Untuk menulis fungsi dengan sintaks ringkas.
+  ```javascript
+  const greet = (name) => `Hello, ${name}!`;
+  ```
+- **Destructuring:** Untuk mengambil nilai dari objek atau array.
+  ```javascript
+  const { title, content } = props;
+  ```
+- **State Management:** Menggunakan hook seperti `useState` untuk mengelola state komponen.
+  ```javascript
+  const [text, setText] = useState("");
+  ```
 
 ---
 

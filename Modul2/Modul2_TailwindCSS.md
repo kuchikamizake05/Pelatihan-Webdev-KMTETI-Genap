@@ -120,6 +120,11 @@ Ini mengurangi beban server Anda dan mempercepat waktu load halaman.
 
 ---
 
+### 🛠 **Install Extension Pendukung**
+
+1. **Tailwind CSS IntelliSense** - Menyediakan autocompletion, linting, dan tooltips untuk kelas-kelas Tailwind CSS, sehingga memudahkan penulisan dan menjaga konsistensi kode.  
+   🔗 [Unduh Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+
 ## 0️⃣ Review Basic HTML & CSS 😅
 
 - 🔗 [PPT](https://www.canva.com/design/DAGhD690Vm4/qQoe9HD94nnDsr_ATcmKSQ/edit?utm_content=DAGhD690Vm4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
@@ -301,6 +306,12 @@ body {
 
 1. **Tailwind CSS Docs**  
    🔗 [Docs](https://tailwindcss.com/docs/styling-with-utility-classes)
+2. **Tailwind in 23 Minutes (Skip to 5.18)**  
+   🔗 [FastTrack](https://youtu.be/W-LDhPyv478?si=b3H8SItB0J1zK2Jv)
+3. **Tailwind Layouting**  
+   🔗 [Layouting](https://youtu.be/Hq0M3zUlegE?si=ngOxx-4eQyaOtovk)
+4. **Tailwind FlexBox**  
+   🔗 [FlexBox](https://youtu.be/tZV_Ax9TyUY?si=djL1YwqpYpiEaov0)
 
 ## 🚀 Pertemuan Berikutnya
 

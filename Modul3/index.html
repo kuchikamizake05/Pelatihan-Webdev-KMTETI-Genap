@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Summarizer</title>
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Connect js file -->
+    <script src="/Modul3/main.js"></script>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <header class="bg-blue-500 text-white py-4">
+      <h1 class="text-3xl font-bold">AI Summarizer</h1>
+    </header>
+    <main class="max-w-3xl mx-auto p-4">
+      <p class="mb-4 text-lg">Masukkan teks untuk diringkas:</p>
+      <!-- Container input dan tombol -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <textarea
+          id="inputText"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          rows="5"
+          placeholder="Masukkan teks di sini"
+        ></textarea>
+        <div class="flex flex-col gap-2">
+          <button
+            class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+            onclick="ringkas()"
+          >
+            Ringkas
+          </button>
+          <button
+            class="px-6 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition"
+            onclick="reset()"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+      <!-- Fitur Tambahan: Hasil Ringkasan -->
+      <section class="mt-8 bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold mb-2">Hasil Ringkasan</h2>
+        <p id="hasilRingkasan" class="text-gray-700">
+          Hasil ringkasan teks akan muncul di sini setelah proses ringkasan
+          selesai.
+        </p>
+      </section>
+      <!-- Fitur Tambahan: Riwayat Ringkasan -->
+      <section class="mt-8 bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold mb-2">Riwayat Ringkasan</h2>
+        <ul
+          id="riwayatRingkasan"
+          class="list-disc list-inside text-gray-700 flex flex-col gap-[8px]"
+        >
+          <!-- Riwayat akan dirender secara dinamis -->
+        </ul>
+      </section>
+    </main>
+    <!-- <script>
+      // Fungsi untuk menampilkan ringkasan dan menambahkan ke riwayat
+      function ringkas() {
+        const input = document.getElementById("inputText").value.trim();
+        if (input === "") return;
+
+        // Simulasi ringkasan: output sama dengan input (karena belum terhubung ke model AI)
+        const summary = input;
+        document.getElementById("hasilRingkasan").innerText = summary;
+
+        // Simpan ringkasan ke localStorage dan render riwayat
+        let history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
+        history.push(summary);
+        localStorage.setItem("summaryHistory", JSON.stringify(history));
+        renderHistory();
+      }
+
+      // Fungsi untuk mereset input dan hasil ringkasan
+      function reset() {
+        document.getElementById("inputText").value = "";
+        document.getElementById("hasilRingkasan").innerText =
+          "Hasil ringkasan teks akan muncul di sini setelah proses ringkasan selesai.";
+      }
+
+      // Fungsi untuk menghapus item riwayat berdasarkan index
+      function deleteHistory(index) {
+        let history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
+        history.splice(index, 1);
+        localStorage.setItem("summaryHistory", JSON.stringify(history));
+        renderHistory();
+      }
+
+      // Fungsi untuk menampilkan riwayat ringkasan dan menambahkan delete button
+      function renderHistory() {
+        const riwayatList = document.getElementById("riwayatRingkasan");
+        riwayatList.innerHTML = "";
+        let history = JSON.parse(localStorage.getItem("summaryHistory")) || [];
+
+        // Jika tidak ada riwayat, tampilkan pesan
+        if (history.length === 0)
+          return (riwayatList.innerHTML =
+            "<p class='text-gray-700'>Tidak ada riwayat ringkasan.</p>");
+
+        history.forEach((item, index) => {
+          let li = document.createElement("li");
+          li.className = "flex justify-between items-center";
+          li.innerText = item;
+
+          // Tombol delete untuk tiap riwayat
+          let delBtn = document.createElement("button");
+          delBtn.innerText = "Delete";
+          delBtn.className =
+            "ml-4 px-2 py-1 bg-red-400 text-white rounded hover:bg-red-500 transition";
+          delBtn.onclick = function () {
+            deleteHistory(index);
+          };
+
+          li.appendChild(delBtn);
+          riwayatList.appendChild(li);
+        });
+      }
+
+      // Render riwayat saat halaman dimuat
+      window.onload = renderHistory;
+    </script> -->
+  </body>
+</html>

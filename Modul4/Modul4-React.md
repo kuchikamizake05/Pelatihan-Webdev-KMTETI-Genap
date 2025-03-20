@@ -208,12 +208,12 @@ Tambahkan direktif `@import` ke dalam file CSS utama (`src/index.css`) untuk men
 #### File: `src/App.jsx`
 
 ```jsx
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Summarizer from "./components/Summarizer";
 import History from "./components/History";
 
-function App() {
+const App = () => {
   const [inputText, setInputText] = useState("");
   const [summary, setSummary] = useState("");
   const [history, setHistory] = useState([]);
@@ -268,9 +268,8 @@ export default App;
 #### File: `src/components/Header.jsx`
 
 ```jsx
-import React from "react";
 
-function Header({ title }) {
+const Header = ({ title }) => {
   return (
     <header className="bg-blue-500 text-white py-4">
       <h1 className="text-3xl font-bold">{title}</h1>
@@ -284,15 +283,14 @@ export default Header;
 #### File: `src/components/Summarizer.jsx`
 
 ```jsx
-import React from "react";
 
-function Summarizer({
+const Summarizer = ({
   inputText,
   setInputText,
   summary,
   handleSummarize,
   handleReset,
-}) {
+}) => {
   return (
     <div>
       <p className="mb-4 text-lg">Masukkan teks untuk diringkas:</p>
@@ -336,9 +334,8 @@ export default Summarizer;
 #### File: `src/components/History.jsx`
 
 ```jsx
-import React from "react";
 
-function History({ history, handleDelete }) {
+const History = ({ history, handleDelete }) => {
   return (
     <section className="mt-8 bg-white p-4 rounded shadow">
       <h2 className="text-xl font-semibold mb-2">Riwayat Ringkasan</h2>

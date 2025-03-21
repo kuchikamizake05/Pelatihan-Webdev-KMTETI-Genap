@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import Header from "./components/Header";
+import Summarizer from "./components/Summarizer";
+import History from "./components/History";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [inputText, setInputText] = useState("");
+  const [summary, setSummary] = useState("");
+  const [history, setHistory] = useState([]);
+
+  // Ambil riwayat dari localStorage saat komponen pertama kali dimuat
+  useEffect(() => {
+    const storedHistory =
+      JSON.parse(localStorage.getItem("summaryHistory")) || [];
+    setHistory(storedHistory);
+  }, []);
+
+  const handleSummarize = () => {
+    if (inputText.trim() === "") return;
+    // Simulasi ringkasan: output sama dengan input
+    setSummary(inputText);
+    const newHistory = [...history, inputText];
+    setHistory(newHistory);
+    localStorage.setItem("summaryHistory", JSON.stringify(newHistory));
+  };
+
+  const handleReset = () => {
+    setInputText("");
+    setSummary("");
+  };
+
+  const handleDelete = (index) => {
+    const newHistory = history.filter((_, i) => i !== index);
+    setHistory(newHistory);
+    localStorage.setItem("summaryHistory", JSON.stringify(newHistory));
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="bg-gray-100 font-sans min-h-screen">
+      <Header title="AI Summarizer" />
+      <main className="max-w-3xl mx-auto p-4">
+        <Summarizer
+          inputText={inputText}
+          setInputText={setInputText}
+          summary={summary}
+          handleSummarize={handleSummarize}
+          handleReset={handleReset}
+        />
+        <History history={history} handleDelete={handleDelete} />
+      </main>
+    </div>
+  );
+};
 
-export default App
+export default App;

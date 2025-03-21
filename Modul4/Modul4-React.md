@@ -126,33 +126,7 @@ ai-summarizer/
 
 _Visualisasi menggunakan Mermaid:_
 
-```mermaid
-flowchart TD
-    A[ai-summarizer]
-    B[public]
-    C[src]
-    D[components]
-    E[Header.jsx]
-    F[Summarizer.jsx]
-    G[History.jsx]
-    H[App.jsx]
-    I[index.css]
-    J[main.jsx]
-    K[package.json]
-    L[vite.config.js]
-
-    A --> B
-    A --> C
-    C --> D
-    D --> E
-    D --> F
-    D --> G
-    C --> H
-    C --> I
-    C --> J
-    A --> K
-    A --> L
-```
+[![](https://mermaid.ink/img/pako:eNpNkstywjAMRX8l4zXJB2TRGSBAeHRFV3W6UG0lmMaP8aOFMvx7XTCMvdK5upZHki-EaY6kJv2of9gBrC_emk4V8UwpiNIFKcGKX7Qfd3VGTfgcBUs4p84-4oYyLY1WqLxL0oK2CBxtdXSnJC3p_lkzk1e0Fc5re860lk6NyXhNheJ4qph71N9QCUJlli01wL5gwKhplcQd_RYeK6ZVL4aYiHJqsSjLl2KWwzz1dYM0ieYGixyWOazyO20O6xw2-TvbHHZkQiTa2AuPq7j8pzriDyixI3UMOfYQRt-RTl2jFYLX-7NipPY24IRYHYYDqXsYXaRgOHhsBAwW5MNiQL1rLZ8m5CIO-_W--9sXuP4B1nOccA?type=png)](https://mermaid.live/edit#pako:eNpNkstywjAMRX8l4zXJB2TRGSBAeHRFV3W6UG0lmMaP8aOFMvx7XTCMvdK5upZHki-EaY6kJv2of9gBrC_emk4V8UwpiNIFKcGKX7Qfd3VGTfgcBUs4p84-4oYyLY1WqLxL0oK2CBxtdXSnJC3p_lkzk1e0Fc5re860lk6NyXhNheJ4qph71N9QCUJlli01wL5gwKhplcQd_RYeK6ZVL4aYiHJqsSjLl2KWwzz1dYM0ieYGixyWOazyO20O6xw2-TvbHHZkQiTa2AuPq7j8pzriDyixI3UMOfYQRt-RTl2jFYLX-7NipPY24IRYHYYDqXsYXaRgOHhsBAwW5MNiQL1rLZ8m5CIO-_W--9sXuP4B1nOccA)
 
 ---
 

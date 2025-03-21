@@ -18,9 +18,8 @@ Pada pertemuan ke-4 ini, peserta akan:
 
 - **Virtual DOM:**  
   React menggunakan Virtual DOM untuk mengoptimalkan pembaruan UI. Saat state berubah, React melakukan perbandingan antara Virtual DOM dan DOM nyata, kemudian hanya mengupdate bagian yang berubah, sehingga meningkatkan performa.
-
-- **Deklaratif:**  
-  React memungkinkan Anda mendeskripsikan tampilan UI secara deklaratif. Anda cukup menyatakan bagaimana UI harus terlihat berdasarkan state, dan React akan mengelola pembaruan secara otomatis.
+  ![How VDOM work](https://i.ytimg.com/vi/M-Aw4p0pWwg/maxresdefault.jpg)
+  ![VDOM vs DOM](https://media.licdn.com/dms/image/v2/D4D12AQG4QVjwHUhQ7w/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1709405757285?e=2147483647&v=beta&t=eEH08CgdhUoItOJLvhw0kD4U90lMhKevOwnjFsi9EF0)
 
 - **Ekosistem yang Luas:**  
   Dengan dukungan dari komunitas besar, React memiliki banyak library pendukung dan dokumentasi yang lengkap.
@@ -34,12 +33,6 @@ Pada pertemuan ke-4 ini, peserta akan:
 - **Performa Cepat:** Vite menggunakan ES modules dan bundler yang sangat cepat, sehingga proses build dan hot-reloading lebih cepat dibandingkan alat build tradisional.
 - **Ringan & Modern:** Konfigurasi minimal dan mendukung fitur terbaru ES6+ serta integrasi yang mudah dengan React.
 - **Pengalaman Pengembang yang Lebih Baik:** Dengan hot module replacement (HMR), perubahan kode langsung terlihat tanpa harus reload seluruh halaman.
-
-### Virtual DOM
-
-- **Virtual DOM** adalah representasi virtual dari DOM yang sebenarnya.
-- React menggunakan Virtual DOM untuk melakukan perbandingan (diffing) antara state lama dan baru, lalu hanya memperbarui bagian-bagian yang berubah.
-- Hal ini meningkatkan efisiensi dan performa aplikasi web.
 
 ---
 
@@ -76,7 +69,7 @@ Pada pertemuan ke-4 ini, peserta akan:
    ```bash
    yarn dev
    ```
-   Vite akan memulai server pengembangan dan memberikan URL (biasanya `http://localhost:3000`) untuk melihat aplikasi React.
+   Vite akan memulai server pengembangan dan memberikan URL (biasanya `http://localhost:5173`) untuk melihat aplikasi React.
 
 ---
 
@@ -160,6 +153,22 @@ flowchart TD
     A --> K
     A --> L
 ```
+
+---
+
+## Ekstensi JSX
+
+Ekstensi `.jsx` digunakan di React untuk menuliskan sintaks JavaScript yang mendukung HTML secara langsung, memudahkan developer menulis komponen UI yang deklaratif.
+
+---
+
+## Ekstensi Penting di VS Code
+
+Instal ekstensi berikut untuk produktivitas lebih tinggi:
+
+- **ES7+ React/Redux/React-Native snippets by dsznajder**:
+  - Snippet singkat dan lengkap untuk mempercepat penulisan kode React.
+  - [Link Instalasi](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 
 ---
 
@@ -260,7 +269,7 @@ const App = () => {
       </main>
     </div>
   );
-}
+};
 
 export default App;
 ```
@@ -268,14 +277,13 @@ export default App;
 #### File: `src/components/Header.jsx`
 
 ```jsx
-
 const Header = ({ title }) => {
   return (
     <header className="bg-blue-500 text-white py-4">
       <h1 className="text-3xl font-bold">{title}</h1>
     </header>
   );
-}
+};
 
 export default Header;
 ```
@@ -283,7 +291,6 @@ export default Header;
 #### File: `src/components/Summarizer.jsx`
 
 ```jsx
-
 const Summarizer = ({
   inputText,
   setInputText,
@@ -292,7 +299,7 @@ const Summarizer = ({
   handleReset,
 }) => {
   return (
-    <div>
+    <>
       <p className="mb-4 text-lg">Masukkan teks untuk diringkas:</p>
       <div className="flex flex-col sm:flex-row gap-4">
         <textarea
@@ -324,9 +331,9 @@ const Summarizer = ({
             "Hasil ringkasan teks akan muncul di sini setelah proses ringkasan selesai."}
         </p>
       </section>
-    </div>
+    </>
   );
-}
+};
 
 export default Summarizer;
 ```
@@ -334,7 +341,6 @@ export default Summarizer;
 #### File: `src/components/History.jsx`
 
 ```jsx
-
 const History = ({ history, handleDelete }) => {
   return (
     <section className="mt-8 bg-white p-4 rounded shadow">
@@ -358,7 +364,7 @@ const History = ({ history, handleDelete }) => {
       )}
     </section>
   );
-}
+};
 
 export default History;
 ```
@@ -391,14 +397,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   - **useState:** Digunakan untuk menyimpan nilai input, hasil ringkasan, dan riwayat ringkasan.
   - **useEffect:** Digunakan untuk mengambil data dari local storage ketika aplikasi pertama kali dimuat.
 
-- **Virtual DOM:**  
-  React menggunakan Virtual DOM untuk mempercepat pembaruan UI. Setiap perubahan state akan dibandingkan dengan Virtual DOM, lalu hanya bagian yang berubah yang di-update ke DOM nyata.
-
 - **Props:**  
   Props digunakan untuk meneruskan data dan fungsi dari komponen induk (App) ke komponen anak (Header, Summarizer, History).
 
-- **Integrasi dengan Vite:**  
-  Vite menyediakan konfigurasi minimal dan proses build yang cepat. File utama `index.html` di dalam folder `public` berisi tag `<div id="root"></div>` yang digunakan React untuk merender aplikasi dari `main.jsx`.
+---
+
+## Referensi Video Belajar React
+
+- [React Full Course](https://youtu.be/CgkZ7MvWUAA?si=zp_FuXM-UhrVdpbi)
 
 ---
 

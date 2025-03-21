@@ -6,7 +6,7 @@ const Summarizer = ({
   handleReset,
 }) => {
   return (
-    <div>
+    <>
       <p className="mb-4 text-lg">Masukkan teks untuk diringkas:</p>
       <div className="flex flex-col sm:flex-row gap-4">
         <textarea
@@ -38,7 +38,7 @@ const Summarizer = ({
             "Hasil ringkasan teks akan muncul di sini setelah proses ringkasan selesai."}
         </p>
       </section>
-    </div>
+    </>
   );
 };
 
